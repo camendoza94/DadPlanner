@@ -6,7 +6,7 @@ export const Items = new Mongo.Collection('items');
 
 if (Meteor.isServer) {
   // This code only runs on the server
-  Meteor.publish('items', () => Items.find({creator: this.userId}));
+  Meteor.publish('items', () => Items.find({}));
 }
  
 Meteor.methods({
