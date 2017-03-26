@@ -1,2 +1,2 @@
-# MeteorPeerReview
-Peer reviewer
+# DadPlanner
+Dad planner for Web development Course.
