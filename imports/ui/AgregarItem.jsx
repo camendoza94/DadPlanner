@@ -97,8 +97,10 @@ export default class AgregarItem extends Component {
                 </select>
               </td>
             </tr>
+
             <tr>
               <td> Pagar en </td>
+
               <td> <input type="date" value={this.state.item.dueDay} onChange={(event) => { this.setItemDueDay(event).bind(this) }} /> </td>
             </tr>
             <tr>
@@ -109,8 +111,10 @@ export default class AgregarItem extends Component {
               <td> Valor </td>
               <td> <input type="text" value={this.state.item.amount} onChange={(event) => { this.setItemAmount(event).bind(this) }} /> </td>
             </tr>
+
           </tbody>
         </table>
+
         <button className="btn btn-primary btn-xs pull-right" onClick={this.addItem.bind(this)}> Agregar </button>
       </div>
     );

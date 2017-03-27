@@ -13,6 +13,10 @@ export default class ListarItems extends Component {
       displayCategories: []
     };
 
+
+  }
+
+  componentDidMount() {
     this.updateItemsList();
   }
 
@@ -46,7 +50,7 @@ export default class ListarItems extends Component {
   }
 
   render(){
-    this.updateItemsList();
+    // this.updateItemsList();
     return (
       <div>
         {
