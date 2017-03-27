@@ -10,7 +10,7 @@ import ListarItems from './ListarItems.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 
 export class App extends Component {
-  
+
   updateItemsList() {
     this.listarItemsChild.updateItemsList();
   }
@@ -22,7 +22,6 @@ export class App extends Component {
         <br/>
 
         <div className="row">
-          <h1>PLANEADOR PARA PAPAS</h1>
           <p>
             PPP es una aplicación que permite tener el control sobre los pagos
             periódicos que debe hacer un adulto en Colombia. Por ahora soportamos
@@ -34,12 +33,15 @@ export class App extends Component {
         <br/>
 
         <div className="row">
-          <AccountsUIWrapper />
+
+          {/* Componente: Accounts */}
+          <div className="col-md-8 col-xs-12">
+            <AccountsUIWrapper />
+          </div>
 
           {/* Componente: Listar Items */}
           <div className="col-md-8 col-xs-12">
             <ListarItems items = {this.props.items.filter(item => item.creator === this.props.currentUser._id)} ref={(input) => { this.listarItemsChild = input; }} user={this.props.currentUser && this.props.currentUser._id} />
-            
           </div>
 
           {/* Componente: Agregar Item */}
@@ -63,7 +65,7 @@ App.propTypes = {
 
 export default AppContainer = createContainer(()=>{
   Meteor.subscribe('items');
-  return {    
+  return {
     items: Items.find({}).fetch(),
     currentUser: Meteor.user()
   };

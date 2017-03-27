@@ -12,7 +12,9 @@ export default class ListarItems extends Component {
       formatsDisplayTableKeys: ['string','string','date','date','money'],
       displayCategories: []
     };
+  }
 
+  componentDidMount() {
     this.updateItemsList();
   }
 
@@ -46,7 +48,6 @@ export default class ListarItems extends Component {
   }
 
   render(){
-    this.updateItemsList();
     return (
       <div>
         {
