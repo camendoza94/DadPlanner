@@ -7,9 +7,9 @@ export default class ListarItems extends Component {
   constructor(props){
     super(props);
     this.state={
-      tableTitles: ['Nombre','Tipo','Pagar en','Periodicidad','Valor', 'Acción'],
-      displayTableKeys: ['name','type','dueDay','periodicity','amount'],
-      formatsDisplayTableKeys: ['string','string','date','string','money'],
+      tableTitles: ['Nombre','Tipo','Valor', 'Acción'],
+      displayTableKeys: ['name','type','amount'],
+      formatsDisplayTableKeys: ['string','string','money'],
       displayCategories: []
     };
   }
@@ -47,6 +47,10 @@ export default class ListarItems extends Component {
     this.updateItemsList();
   }
 
+  openEditModal(){
+		Modal.show("editModal");
+  }
+
   render(){
     return (
       <div>
@@ -63,10 +67,8 @@ export default class ListarItems extends Component {
                         <tr>
                           <th>Nombre</th>
                           <th>Tipo</th>
-                          <th>Pagar en</th>
-                          <th>Periodicidad</th>
                           <th>Valor</th>
-                          <th className="text-center">Accion</th>
+                          <th className="text-center">Acción</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -98,6 +100,8 @@ export default class ListarItems extends Component {
                                       }, this)
                                   }
                                   <td className="text-center">
+                                    <button className="btn btn-info btn-xs" onClick={this.openEditModal.bind(this)}> Detalles </button>
+                                    &emsp;
                                     <button className="btn btn-danger btn-xs" onClick={this.deleteItem.bind(this, row._id)}> Eliminar </button>
                                   </td>
                                 </tr>
@@ -116,6 +120,7 @@ export default class ListarItems extends Component {
         }
         <br />
         <button className="btn btn-success btn-xs pull-right" onClick={this.updateItemsList.bind(this)}> Actualizar Items </button>
+
       </div>
     );
   }

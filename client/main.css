@@ -6,7 +6,7 @@
   :: General
   -------------------------------------------------- */
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #353535;
 }
 .content h1 {
@@ -14,8 +14,8 @@ body {
 }
 .content .content-footer p {
   color: #6d6d6d;
-    font-size: 12px;
-    text-align: center;
+  font-size: 12px;
+  text-align: center;
 }
 .content .content-footer p a {
   color: inherit;
@@ -23,6 +23,12 @@ body {
 }
 .yellow-heading {
   color: #FFAD1C;
+}
+.btn {
+  font-size: 16px;
+}
+.navbar {
+  font-size: 20px;
 }
 
 /*  --------------------------------------------------
@@ -34,6 +40,7 @@ body {
   margin: 5% 0;
   box-shadow: 3px 3px 2px #ccc;
   transition: 0.5s;
+  font-size: 18px;
 }
 .custab:hover {
   box-shadow: 3px 3px 0px transparent;

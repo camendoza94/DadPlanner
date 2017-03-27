@@ -56,7 +56,7 @@ export class App extends Component {
                     recordatorios cada vez que se acerce el momento del pago.
                   </p>
                   <p>
-                    ¡Empieza a agregar!
+                    ¡Regístrate y empieza a agregar!
                   </p>
                 </h3>
               </div>
@@ -67,12 +67,12 @@ export class App extends Component {
             <div className="row">
 
               {/* Componente: Listar Items */}
-              <div className="col-md-8 col-xs-12">
+              <div className="col-md-7 col-xs-12">
                 <ListarItems items = {this.props.items.filter(item => item.creator === this.props.currentUser._id)} ref={(input) => { this.listarItemsChild = input; }} user={this.props.currentUser && this.props.currentUser._id} />
               </div>
 
               {/* Componente: Agregar Item */}
-              <div className="col-md-4 col-xs-12 custyle">
+              <div className="col-md-5 col-xs-12 custyle">
                 <AgregarItem user={this.props.currentUser && this.props.currentUser._id} updateItemsList={this.updateItemsList.bind(this)} />
               </div>
 
