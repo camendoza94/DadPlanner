@@ -71,8 +71,8 @@ export default class AgregarItem extends Component {
           </thead>
           <tbody>
             <tr>
-              <td> Nombre </td>
-              <td> <input type="text" value={AgregarItem.context.state.item.name} onChange={(event) => { AgregarItem.context.setItemName(event) }} /> </td>
+              <td> <label htmlFor="nombre">Nombre</label> </td>
+              <td> <input id="nombre" type="text" label="Nombre del elemento a agregar" value={AgregarItem.context.state.item.name} onChange={(event) => { AgregarItem.context.setItemName(event) }} /> </td>
             </tr>
             <tr>
               <td> Categoria </td>
@@ -98,8 +98,8 @@ export default class AgregarItem extends Component {
               </td>
             </tr>
             <tr>
-              <td> Pagar en </td>
-              <td> <input className="custab-date" type="date" value={AgregarItem.context.state.item.dueDay} onChange={(event) => { AgregarItem.context.setItemDueDay(event) }} /> </td>
+              <td> <label htmlFor="pagaren">Pagar en</label> </td>
+              <td> <input id="pagaren" className="custab-date" type="date" value={AgregarItem.context.state.item.dueDay} onChange={(event) => { AgregarItem.context.setItemDueDay(event) }} /> </td>
             </tr>
             <tr>
               <td> Periodicidad </td>
@@ -115,8 +115,8 @@ export default class AgregarItem extends Component {
               </td>
             </tr>
             <tr>
-              <td> Valor </td>
-              <td> <input type="text" value={AgregarItem.context.state.item.amount} onChange={(event) => { AgregarItem.context.setItemAmount(event) }} /> </td>
+              <td> <label htmlFor="valor"> Valor </label> </td>
+              <td> <input id="valor" type="text" value={AgregarItem.context.state.item.amount} onChange={(event) => { AgregarItem.context.setItemAmount(event) }} /> </td>
             </tr>
           </tbody>
         </table>

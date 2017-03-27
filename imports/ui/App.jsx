@@ -46,15 +46,14 @@ export class App extends Component {
 
             <div className="row">
               <div className="col-md-2">
-                <img src="/images/ppp.png" alt="Logo de Planeador Para Papas" width="100%"></img>
+                <img src="/images/ppp.png" alt="Logo de Planeador Para Papas" width="100%" height="100%"></img>
               </div>
               <div className="col-md-10">
                 <h3>
                   <p>
-                    En PPP te ayudamos a tener el control sobre los pagos
-                    periódicos que debe hacer un adulto en Colombia. Puedes
-                    seleccionar los elementos que te apliquen y tener recordatorios
-                    cada vez que se acerce el momento del pago.
+                    En PPP te ayudamos a tener el control sobre los pagos periódicos que debe hacer <br />
+                    un adulto en Colombia. Puedes seleccionar los elementos que te apliquen y tener <br />
+                    recordatorios cada vez que se acerce el momento del pago.
                   </p>
                   <p>
                     ¡Empieza a agregar!
