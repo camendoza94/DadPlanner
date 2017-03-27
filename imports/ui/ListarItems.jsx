@@ -98,7 +98,7 @@ export default class ListarItems extends Component {
                                       }, this)
                                   }
                                   <td className="text-center">
-                                    <button className="btn btn-danger btn-xs" onClick={this.deleteItem.bind(this, row._id)}><span className="glyphicon glyphicon-remove"></span> Eliminar </button>
+                                    <button className="btn btn-danger btn-xs" onClick={this.deleteItem.bind(this, row._id)}> Eliminar </button>
                                   </td>
                                 </tr>
                               );

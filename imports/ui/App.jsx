@@ -19,35 +19,60 @@ export class App extends Component {
     return(
       <div>
 
-        <br/>
-
         <div className="row">
-          <p>
-            PPP es una aplicación que permite tener el control sobre los pagos
-            periódicos que debe hacer un adulto en Colombia. Por ahora soportamos
-            3 categorías principales referentes a viviendas (casa), vehiculos (carro)
-            y finanzas personales.
-          </p>
+          <nav className="navbar navbar-default">
+        	  <div className="container-fluid">
+        	    <div className="navbar-header">
+        	      <a className="navbar-brand" href="#">&emsp; Planeador Para Papas</a>
+        	    </div>
+
+        	    <div className="collapse navbar-collapse">
+        	      <ul className="nav navbar-nav">
+        	        <li className="active"><a href="#">Home <span className="sr-only">(current)</span></a></li>
+                  <li><a href="#">About</a></li>
+        	      </ul>
+        	      <ul className="nav navbar-nav navbar-right">
+                  {/* Componente: Accounts */}
+        	        <li><AccountsUIWrapper /> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</li>
+        	      </ul>
+        	    </div>
+        	  </div>
+        	</nav>
         </div>
 
-        <br/>
-
         <div className="row">
+          <div className="col-md-1"></div>
 
-          {/* Componente: Accounts */}
-          <div className="col-md-8 col-xs-12">
-            <AccountsUIWrapper />
+          <div className="col-md-10">
+
+            <div className="row">
+              <p>
+                PPP es una aplicación que permite tener el control sobre los pagos
+                periódicos que debe hacer un adulto en Colombia. Por ahora soportamos
+                3 categorías principales referentes a viviendas (casa), vehiculos (carro)
+                y finanzas personales.
+              </p>
+            </div>
+
+            <br/>
+
+            <div className="row">
+
+              {/* Componente: Listar Items */}
+              <div className="col-md-8 col-xs-12">
+                <ListarItems items = {this.props.items.filter(item => item.creator === this.props.currentUser._id)} ref={(input) => { this.listarItemsChild = input; }} user={this.props.currentUser && this.props.currentUser._id} />
+              </div>
+
+              {/* Componente: Agregar Item */}
+              <div className="col-md-4 col-xs-12 custyle">
+                <AgregarItem user={this.props.currentUser && this.props.currentUser._id} updateItemsList={this.updateItemsList.bind(this)} />
+              </div>
+
+            </div>
+
           </div>
 
-          {/* Componente: Listar Items */}
-          <div className="col-md-8 col-xs-12">
-            <ListarItems items = {this.props.items.filter(item => item.creator === this.props.currentUser._id)} ref={(input) => { this.listarItemsChild = input; }} user={this.props.currentUser && this.props.currentUser._id} />
-          </div>
-
-          {/* Componente: Agregar Item */}
-          <div className="col-md-4 col-xs-12 custyle">
-            <AgregarItem user={this.props.currentUser && this.props.currentUser._id} updateItemsList={this.updateItemsList.bind(this)} />
-          </div>
+          <div className="col-md-1"></div>
 
         </div>
 
