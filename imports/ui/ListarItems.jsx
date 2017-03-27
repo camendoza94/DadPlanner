@@ -7,9 +7,9 @@ export default class ListarItems extends Component {
   constructor(props){
     super(props);
     this.state={
-      tableTitles: ['Nombre','Tipo','Pagar en','Recordatorio','Valor', 'Acción'],
-      displayTableKeys: ['name','type','dueDay','reminderDate','amount'],
-      formatsDisplayTableKeys: ['string','string','date','date','money'],
+      tableTitles: ['Nombre','Tipo','Pagar en','Periodicidad','Valor', 'Acción'],
+      displayTableKeys: ['name','type','dueDay','periodicity','amount'],
+      formatsDisplayTableKeys: ['string','string','date','string','money'],
       displayCategories: []
     };
   }
@@ -57,14 +57,14 @@ export default class ListarItems extends Component {
               <div key={i}>
                 <div className="row">
                   <div className="col-md-12 col-xs-12">
-                    <h2>{cat}</h2>
+                    <h2 className="yellow-heading">{cat}</h2>
                     <table className="table table-striped custab">
                       <thead>
                         <tr>
                           <th>Nombre</th>
                           <th>Tipo</th>
                           <th>Pagar en</th>
-                          <th>Recordatorio</th>
+                          <th>Periodicidad</th>
                           <th>Valor</th>
                           <th className="text-center">Accion</th>
                         </tr>
@@ -115,7 +115,7 @@ export default class ListarItems extends Component {
           }, this)
         }
         <br />
-        <button className="btn btn-primary btn-xs pull-right" onClick={this.updateItemsList.bind(this)}> Actualizar Items </button>
+        <button className="btn btn-success btn-xs pull-right" onClick={this.updateItemsList.bind(this)}> Actualizar Items </button>
       </div>
     );
   }

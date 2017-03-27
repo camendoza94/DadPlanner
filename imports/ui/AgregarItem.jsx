@@ -12,7 +12,7 @@ export default class AgregarItem extends Component {
         name: "",
         dueDay: "",
         type: "",
-        reminderDate: "",
+        periodicity: "",
         amount: ""
       }
     };
@@ -28,7 +28,7 @@ export default class AgregarItem extends Component {
   clearAddItemFields() {
     this.setState({item: update(this.state.item, {name: {$set: ""}})});
     this.setState({item: update(this.state.item, {dueDay: {$set: ""}})});
-    this.setState({item: update(this.state.item, {reminderDate: {$set: ""}})});
+    this.setState({item: update(this.state.item, {periodicity: {$set: ""}})});
     this.setState({item: update(this.state.item, {amount: {$set: ""}})});
   }
 
@@ -48,8 +48,8 @@ export default class AgregarItem extends Component {
     this.setState({item: update(this.state.item, {dueDay: {$set: event.target.value}})});
   }
 
-  setItemReminderDate(event) {
-    this.setState({item: update(this.state.item, {reminderDate: {$set: event.target.value}})});
+  setItemPeriodicity(event) {
+    this.setState({item: update(this.state.item, {periodicity: {$set: event.target.value}})});
   }
 
   setItemAmount(event) {
@@ -61,7 +61,7 @@ export default class AgregarItem extends Component {
     //console.log(AgregarItem.context.state);
     return (
       <div>
-        <h2>Agregar Item</h2>
+        <h2 className="yellow-heading">Agregar Item</h2>
         <table className="table table-striped custab">
           <thead>
             <tr>
@@ -77,7 +77,7 @@ export default class AgregarItem extends Component {
             <tr>
               <td> Categoria </td>
               <td>
-                <select onChange={(event) => { AgregarItem.context.setItemCategory(event) }}>
+                <select className="custab-select" onChange={(event) => { AgregarItem.context.setItemCategory(event) }}>
                   <option defaultValue="selected" value={AgregarItem.context.state.item.category}> </option>
                   <option value="Casa">Casa</option>
                   <option value="Carro">Carro</option>
@@ -88,7 +88,7 @@ export default class AgregarItem extends Component {
             <tr>
               <td> Tipo </td>
               <td>
-                <select onChange={(event) => { AgregarItem.context.setItemType(event) }}>
+                <select className="custab-select" onChange={(event) => { AgregarItem.context.setItemType(event) }}>
                   <option defaultValue="selected" value={AgregarItem.context.state.item.type}> </option>
                   <option value="Impuesto">Impuesto</option>
                   <option value="Seguro">Seguro</option>
@@ -99,11 +99,20 @@ export default class AgregarItem extends Component {
             </tr>
             <tr>
               <td> Pagar en </td>
-              <td> <input type="date" value={AgregarItem.context.state.item.dueDay} onChange={(event) => { AgregarItem.context.setItemDueDay(event) }} /> </td>
+              <td> <input className="custab-date" type="date" value={AgregarItem.context.state.item.dueDay} onChange={(event) => { AgregarItem.context.setItemDueDay(event) }} /> </td>
             </tr>
             <tr>
-              <td> Recordatorio </td>
-              <td> <input type="date" value={AgregarItem.context.state.item.reminderDate} onChange={(event) => { AgregarItem.context.setItemReminderDate(event) }} /> </td>
+              <td> Periodicidad </td>
+              <td>
+                <select className="custab-select" onChange={(event) => { AgregarItem.context.setItemPeriodicity(event) }}>
+                  <option defaultValue="selected" value={AgregarItem.context.state.item.periodicity}> </option>
+                  <option value="M">Mensual</option>
+                  <option value="B">Bimestral</option>
+                  <option value="T">Trimestral</option>
+                  <option value="S">Semestral</option>
+                  <option value="A">Anual</option>
+                </select>
+              </td>
             </tr>
             <tr>
               <td> Valor </td>
@@ -111,7 +120,7 @@ export default class AgregarItem extends Component {
             </tr>
           </tbody>
         </table>
-        <button className="btn btn-primary btn-xs pull-right" onClick={AgregarItem.context.addItem.bind(this)}> Agregar </button>
+        <button className="btn btn-success btn-xs pull-right" onClick={AgregarItem.context.addItem.bind(this)}> Agregar </button>
       </div>
     );
   }

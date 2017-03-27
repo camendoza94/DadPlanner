@@ -23,13 +23,12 @@ export class App extends Component {
           <nav className="navbar navbar-default">
         	  <div className="container-fluid">
         	    <div className="navbar-header">
-        	      <a className="navbar-brand" href="#">&emsp; Planeador Para Papas</a>
+        	      <a className="navbar-brand" href="#">&emsp;&emsp;&emsp;&emsp; Planeador Para Papas</a>
         	    </div>
 
         	    <div className="collapse navbar-collapse">
         	      <ul className="nav navbar-nav">
         	        <li className="active"><a href="#">Home <span className="sr-only">(current)</span></a></li>
-                  <li><a href="#">About</a></li>
         	      </ul>
         	      <ul className="nav navbar-nav navbar-right">
                   {/* Componente: Accounts */}
@@ -46,12 +45,22 @@ export class App extends Component {
           <div className="col-md-10">
 
             <div className="row">
-              <p>
-                PPP es una aplicación que permite tener el control sobre los pagos
-                periódicos que debe hacer un adulto en Colombia. Por ahora soportamos
-                3 categorías principales referentes a viviendas (casa), vehiculos (carro)
-                y finanzas personales.
-              </p>
+              <div className="col-md-2">
+                <img src="/images/ppp.png" alt="Logo de Planeador Para Papas" width="100%"></img>
+              </div>
+              <div className="col-md-10">
+                <h3>
+                  <p>
+                    En PPP te ayudamos a tener el control sobre los pagos
+                    periódicos que debe hacer un adulto en Colombia. Puedes
+                    seleccionar los elementos que te apliquen y tener recordatorios
+                    cada vez que se acerce el momento del pago.
+                  </p>
+                  <p>
+                    ¡Empieza a agregar!
+                  </p>
+                </h3>
+              </div>
             </div>
 
             <br/>
@@ -73,7 +82,6 @@ export class App extends Component {
           </div>
 
           <div className="col-md-1"></div>
-
         </div>
 
       </div>

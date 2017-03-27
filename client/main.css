@@ -2,7 +2,6 @@
 /* Table Filter: http://bootsnipp.com/snippets/featured/easy-table-filter */
 /* Table: http://bootsnipp.com/snippets/featured/striped-table-30 */
 
-
 /*    --------------------------------------------------
   :: General
   -------------------------------------------------- */
@@ -22,18 +21,29 @@ body {
   color: inherit;
   font-weight: bold;
 }
+.yellow-heading {
+  color: #FFAD1C;
+}
 
 /*  --------------------------------------------------
   :: Table
   -------------------------------------------------- */
-  .custab{
-      border: 1px solid #ccc;
-      padding: 5px;
-      margin: 5% 0;
-      box-shadow: 3px 3px 2px #ccc;
-      transition: 0.5s;
-      }
-  .custab:hover{
-      box-shadow: 3px 3px 0px transparent;
-      transition: 0.5s;
-      }
+.custab {
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px #ccc;
+  transition: 0.5s;
+}
+.custab:hover {
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}
+.custab-select {
+  width: 80%;
+  height: 100%;
+}
+.custab-date {
+  width: 80%;
+  height: 100%;
+}
