@@ -10,7 +10,7 @@ import ListarItems from './ListarItems.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 
 export class App extends Component {
-  
+
   updateItemsList() {
     this.listarItemsChild.updateItemsList();
   }
@@ -37,16 +37,16 @@ export class App extends Component {
           <AccountsUIWrapper />
 
           {/* Componente: Listar Items */}
+
           <div className="col-md-8 col-xs-12">
             <ListarItems items = {this.props.items.filter(item => item.creator === this.props.currentUser._id)} ref={(input) => { this.listarItemsChild = input; }} user={this.props.currentUser && this.props.currentUser._id} />
-            
           </div>
+
 
           {/* Componente: Agregar Item */}
           <div className="col-md-4 col-xs-12 custyle">
             <AgregarItem user={this.props.currentUser && this.props.currentUser._id} updateItemsList={this.updateItemsList.bind(this)} />
           </div>
-
         </div>
 
       </div>
@@ -63,7 +63,7 @@ App.propTypes = {
 
 export default AppContainer = createContainer(()=>{
   Meteor.subscribe('items');
-  return {    
+  return {
     items: Items.find({}).fetch(),
     currentUser: Meteor.user()
   };
