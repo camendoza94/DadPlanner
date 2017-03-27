@@ -31,9 +31,32 @@ export default class AgregarItem extends Component {
     this.setState({item: update(this.state.item, {amount: {$set: ""}})});
   }
 
-  handleChange(field, event) {
-    this.setState({item: update(this.state.item, {name: {$set: ""}})});
+  setItemName(event) {
+    this.setState({item: update(this.state.item, {name: {$set: event.target.value}})});
   }
+
+  setItemCategory(event) {
+    this.setState({item: update(this.state.item, {category: {$set: event.target.value}})});
+  }
+
+  setItemType(event) {
+    this.setState({item: update(this.state.item, {type: {$set: event.target.value}})});
+  }
+
+  setItemDueDay(event) {
+    this.setState({item: update(this.state.item, {dueDay: {$set: event.target.value}})});
+  }
+
+  setItemReminderDate(event) {
+    this.setState({item: update(this.state.item, {reminderDate: {$set: event.target.value}})});
+  }
+
+  setItemAmount(event) {
+    this.setState({item: update(this.state.item, {amount: {$set: event.target.value}})});
+  }
+
+
+
 
   render(){
     return (
@@ -49,12 +72,12 @@ export default class AgregarItem extends Component {
           <tbody>
             <tr>
               <td> Nombre </td>
-              <td> <input type="text" value={this.state.item.name} onChange={(event) => { this.setState({item: update(this.state.item, {name: {$set: event.target.value}})}) }} /> </td>
+              <td> <input type="text" value={this.state.item.name} onChange={(event) => { this.setItemName(event).bind(this) }} /> </td>
             </tr>
             <tr>
               <td> Categoria </td>
               <td>
-                <select onChange={(event) => { this.setState({item: update(this.state.item, {category: {$set: event.target.value}})}) }}>
+                <select onChange={(event) => { this.setItemCategory(event).bind(this) }}>
                   <option defaultValue="selected" value={this.state.item.category}> </option>
                   <option value="Casa">Casa</option>
                   <option value="Carro">Carro</option>
@@ -65,7 +88,7 @@ export default class AgregarItem extends Component {
             <tr>
               <td> Tipo </td>
               <td>
-                <select onChange={(event) => { this.setState({item: update(this.state.item, {type: {$set: event.target.value}})}) }}>
+                <select onChange={(event) => { this.setItemType(event).bind(this) }}>
                   <option defaultValue="selected" value={this.state.item.type}> </option>
                   <option value="Impuesto">Impuesto</option>
                   <option value="Seguro">Seguro</option>
@@ -76,15 +99,15 @@ export default class AgregarItem extends Component {
             </tr>
             <tr>
               <td> Pagar en </td>
-              <td> <input type="date" value={this.state.item.dueDay} onChange={(event) => { this.setState({item: update(this.state.item, {dueDay: {$set: event.target.value}})}) }} /> </td>
+              <td> <input type="date" value={this.state.item.dueDay} onChange={(event) => { this.setItemDueDay(event).bind(this) }} /> </td>
             </tr>
             <tr>
               <td> Recordatorio </td>
-              <td> <input type="date" value={this.state.item.reminderDate} onChange={(event) => { this.setState({item: update(this.state.item, {reminderDate: {$set: event.target.value}})}) }} /> </td>
+              <td> <input type="date" value={this.state.item.reminderDate} onChange={(event) => { this.setItemReminderDate(event).bind(this) }} /> </td>
             </tr>
             <tr>
               <td> Valor </td>
-              <td> <input type="text" value={this.state.item.amount} onChange={(event) => { this.setState({item: update(this.state.item, {amount: {$set: event.target.value}})}) }} /> </td>
+              <td> <input type="text" value={this.state.item.amount} onChange={(event) => { this.setItemAmount(event).bind(this) }} /> </td>
             </tr>
           </tbody>
         </table>

@@ -45,7 +45,7 @@ export default class ListarItems extends Component {
     this.updateItemsList();
   }
 
-  render(){    
+  render(){
     this.updateItemsList();
     return (
       <div>
