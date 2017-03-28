@@ -32,7 +32,7 @@ export class App extends Component {
         	      </ul>
         	      <ul className="nav navbar-nav navbar-right">
                   {/* Componente: Accounts */}
-        	        <li><AccountsUIWrapper /> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</li>
+        	        <li><AccountsUIWrapper /> &emsp;&emsp;</li>
         	      </ul>
         	    </div>
         	  </div>
