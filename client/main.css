@@ -9,7 +9,7 @@
 body {
   font-family: 'Gudea', 'Roboto', sans-serif;
   color: #353535;
-  background-color: rgb(224,224,224,0.1);
+  background-color: rgba(224,224,224,0.4);
 }
 h1, h2 {
   text-align: center;
