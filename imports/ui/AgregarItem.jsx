@@ -2,6 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import { Meteor } from 'meteor/meteor';
 import update from 'immutability-helper';
 
+/**
+   The Meteor calls are undefined and therefore is not possible to
+   add new items.
+**/
 export default class AgregarItem extends Component {
 
   constructor(props){

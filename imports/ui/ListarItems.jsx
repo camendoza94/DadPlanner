@@ -2,6 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import { Meteor } from 'meteor/meteor';
 import update from 'immutability-helper';
 
+/**
+   The listing functions are not working due to the undefined
+   access to the Mongo collection.
+ **/
 export default class ListarItems extends Component {
 
   constructor(props){

@@ -1,0 +1,2 @@
+# General comments
+I couldn't use the application due to the undefined Meteor methods that handle the items collection. In general, the application elements are intuitive, but some of them should be hidden when an user has not logged in, also I recommend to improve the visual integration of the Login and Signup options on the navbar. Finally, it is very positive to implement accessability features such as defining the language of the document, which improves the user experience and integration with other accessability tools.
