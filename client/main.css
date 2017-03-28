@@ -5,12 +5,19 @@
 /*    --------------------------------------------------
   :: General
   -------------------------------------------------- */
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Gudea', 'Roboto', sans-serif;
   color: #353535;
+  background-color: rgb(224,224,224,0.1);
 }
-.content h1 {
+h1, h2 {
   text-align: center;
+  font-family: 'Rancho', 'Gudea', sans-serif;
+  font-weight: bold;
+}
+h2 {
+  font-size: 50px;
 }
 .content .content-footer p {
   color: #6d6d6d;
@@ -58,5 +65,3 @@ body {
 /*  --------------------------------------------------
   :: Sign in/up
   -------------------------------------------------- */
-
-  
