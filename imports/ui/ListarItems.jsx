@@ -120,7 +120,12 @@ export default class ListarItems extends Component {
         }
         <br />
         <button className="btn btn-success btn-xs pull-right" onClick={this.updateItemsList.bind(this)}> Actualizar Items </button>
-
+        {/*
+          Me parece que sería mejor que no se tuviera que dar click a este botón. Vi que
+          lo hacen porque filtran por categorias, pero no entendí muy bien como lo hacen.
+          Creo que lo podrían hacer utilizando los items que tienen en props, que hacen
+          que se recargue la página cada vez que los modifican en la base de datos.  
+        */}
       </div>
     );
   }

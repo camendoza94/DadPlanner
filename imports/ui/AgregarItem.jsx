@@ -20,6 +20,12 @@ export default class AgregarItem extends Component {
 
   addItem() {
     event.preventDefault();
+    /*
+      Podrían manejar los errores que retorne este método para que no se impriman
+      en consola cuando se trata de agregar algo que no cumple el formato esperado.
+      Solo tendrían que agregar una función como tercer argumento a call, que
+      recibe posibles errores.
+    */
     Meteor.call('items.insert', this.state.item);
     this.clearAddItemFields();
     this.props.updateItemsList();
