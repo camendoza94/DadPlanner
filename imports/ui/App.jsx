@@ -8,6 +8,11 @@ import AgregarItem from './AgregarItem.jsx';
 import ListarItems from './ListarItems.jsx';
 import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 
+/**
+  It is possible to login into the app, but is not possible to add new
+  items.
+  Note: +1 for commenting components
+ **/
 export class App extends Component {
 
   updateItemsList() {

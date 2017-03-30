@@ -5,8 +5,14 @@ import { check } from 'meteor/check';
 const Items = new Mongo.Collection('items');
 export { Items as default };
 
+/**
+  It is an excellent idea to protect the access to Mongo collections
+  if an user has not logged in yet.
+**/
+
 if (Meteor.isServer) {
   // This code only runs on the server
+  // Autopublish should be deactivated to use this function.
   Meteor.publish('items', () => Items.find({}));
 }
 

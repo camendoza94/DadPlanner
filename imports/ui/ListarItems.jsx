@@ -1,6 +1,10 @@
 import React, { Component, PropTypes } from 'react';
 import { Meteor } from 'meteor/meteor';
 
+/**
+   The listing functions are not working due to the undefined
+   access to the Mongo collection.
+ **/
 export default class ListarItems extends Component {
 
   containsElement(arr, el) {
