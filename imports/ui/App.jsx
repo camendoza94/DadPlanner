@@ -94,7 +94,7 @@ App.propTypes = {
 };
 
 
-export default AppContainer = createContainer(()=>{
+export default AppContainer = createContainer(() => {
   Meteor.subscribe('items');
   return {
     items: Items.find({}).fetch(),

@@ -100,7 +100,7 @@ export default class ListarItems extends Component {
                                 <td className="text-center">
                                   <button className="btn btn-info btn-xs" onClick={this.openEditModal.bind(this)}> Detalles </button>
                                   &emsp;
-                                  <button className="btn btn-danger btn-xs" onClick={this.deleteItem.bind(this, row.id)}> Eliminar </button>
+                                  <button className="btn btn-danger btn-xs" onClick={this.deleteItem.bind(this, row._id)}> Eliminar </button>
                                 </td>
                               </tr>
                             );
