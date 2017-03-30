@@ -21,6 +21,10 @@ Meteor.methods({
     check(item.amount, String);
 
     // Make sure the user is logged in before inserting an item
+    /*
+      Debería haber algún mensaje que informe a la persona que no se pudo agregar
+      el item por no haber iniciado sesión. O podrían no mostrar la opción de agregar si no ha iniciado sesión.
+    */
     if (!this.userId) {
       throw new Meteor.Error('not-authorized');
     }
