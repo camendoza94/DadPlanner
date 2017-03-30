@@ -2,7 +2,8 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
 
-export const Items = new Mongo.Collection('items');
+const Items = new Mongo.Collection('items');
+export { Items as default };
 
 if (Meteor.isServer) {
   // This code only runs on the server
@@ -11,6 +12,7 @@ if (Meteor.isServer) {
 
 Meteor.methods({
   'items.insert'(item) {
+    check(item, Object);
     check(item.name, String);
     check(item.dueDay, String);
     check(item.category, String);
@@ -32,7 +34,7 @@ Meteor.methods({
       amount: item.amount,
       completed: false,
       creator: this.userId,
-      username: Meteor.users.findOne(this.userId).username
+      username: Meteor.users.findOne(this.userId).username,
     });
   },
   'items.remove'(itemId) {
@@ -45,7 +47,7 @@ Meteor.methods({
 
     Items.remove(itemId);
   },
-   'items.setCompleted'(itemId, setCompleted) {
+  'items.setCompleted'(itemId, setCompleted) {
     check(itemId, String);
     check(setCompleted, Boolean);
 
@@ -55,5 +57,5 @@ Meteor.methods({
     }
 
     Items.update(itemId, { $set: { completed: setCompleted } });
-  }
+  },
 });

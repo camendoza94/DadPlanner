@@ -1,9 +1,8 @@
-import React, {Component, PropTypes} from "react";
-import ReactDOM from 'react-dom';
-import {Meteor} from "meteor/meteor";
-import {createContainer} from "meteor/react-meteor-data";
+import React, { Component, PropTypes } from 'react';
+import { Meteor } from 'meteor/meteor';
+import { createContainer } from 'meteor/react-meteor-data';
 
-import { Items } from '../api/items.js';
+import Items from '../api/items.js';
 
 import AgregarItem from './AgregarItem.jsx';
 import ListarItems from './ListarItems.jsx';
@@ -16,13 +15,13 @@ export class App extends Component {
   }
 
   render() {
-    return(
+    return (
       <div>
 
         <div className="row">
           <nav className="navbar navbar-default">
-        	  <div className="container-fluid">
-        	    <div className="navbar-header">
+        	   <div className="container-fluid">
+        	     <div className="navbar-header">
         	      <a className="navbar-brand" href="#">&emsp;&emsp;&emsp;&emsp; Planeador Para Papas</a>
         	    </div>
 
@@ -68,7 +67,7 @@ export class App extends Component {
 
               {/* Componente: Listar Items */}
               <div className="col-md-7 col-xs-12">
-                <ListarItems items = {this.props.items.filter(item => item.creator === this.props.currentUser._id)} ref={(input) => { this.listarItemsChild = input; }} user={this.props.currentUser && this.props.currentUser._id} />
+                <ListarItems items={this.props.items.filter(item => item.creator === this.props.currentUser._id)} ref={(input) => { this.listarItemsChild = input; }} user={this.props.currentUser && this.props.currentUser._id} />
               </div>
 
               {/* Componente: Agregar Item */}
@@ -91,7 +90,7 @@ export class App extends Component {
 
 App.propTypes = {
   items: PropTypes.array.isRequired,
-  currentUser: PropTypes.object
+  currentUser: PropTypes.object,
 };
 
 
@@ -99,6 +98,6 @@ export default AppContainer = createContainer(()=>{
   Meteor.subscribe('items');
   return {
     items: Items.find({}).fetch(),
-    currentUser: Meteor.user()
+    currentUser: Meteor.user(),
   };
 }, App);
