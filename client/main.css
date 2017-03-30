@@ -80,3 +80,11 @@ h2 {
     display: inline-block !important;
     font-family: 'Gudea', sans-serif !important;
 }
+
+#login-buttons-logout{
+    background-color: none !important;
+    color: white !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Gudea', sans-serif !important;
+}
