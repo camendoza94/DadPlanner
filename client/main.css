@@ -65,3 +65,18 @@ h2 {
 /*  --------------------------------------------------
   :: Sign in/up
   -------------------------------------------------- */
+
+.login-button
+{
+  background: #18CC68 !important;
+}
+
+#login-buttons a{
+    background-color: none !important;
+    color: #000 !important;
+    padding: 14px 25px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-family: 'Gudea', sans-serif !important;
+}
