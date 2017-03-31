@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { SyncedCron } from 'meteor/percolate:synced-cron';
-import { FutureTasks, sendMail, addTask } from '../imports/api/reminders.js';
+import { findTasks, sendMail, addTask } from '../imports/api/reminders.js';
 import '../imports/api/items.js';
 
 Meteor.startup(() => {
@@ -8,7 +8,7 @@ Meteor.startup(() => {
   WebApp.addHtmlAttributeHook(() => ({ lang: 'es' }));
 
   process.env.MAIL_URL = 'smtp://planeadorparapapasapp@gmail.com:ppp_webdev@smtp.gmail.com:465/';
-  FutureTasks.find().forEach(function (mail) {
+  findTasks().forEach(function (mail) {
     if (mail.date < new Date()) {
       sendMail(mail);
     } else {

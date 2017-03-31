@@ -13,6 +13,9 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
+  findTasks() {
+    return FutureTasks.find();
+  },
   sendMail(details) {
     check(details, Object);
     Email.send({
