@@ -49,7 +49,7 @@ Meteor.methods({
       to: Meteor.users.findOne(this.userId).username,
       subject: 'Recordatorio de Pago - PPP',
       text: msg,
-      date: dueDay,
+      date: new Date(dueDay),
     };
 
     if (details.date < new Date()) {
