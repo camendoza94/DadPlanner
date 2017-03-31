@@ -72,12 +72,12 @@ export default class ListarItems extends Component {
                     <tbody>
                       {
                         this.props.items != null &&
-                        this.props.items.map(function (row) {
+                        this.props.items.map((row) => {
                           if (row.category === cat) {
                             return (
                               <tr key={row._id}>
                                 {
-                                  this.state.displayTableKeys.map(function (key, j) {
+                                  this.state.displayTableKeys.map((key, j) => {
                                     if (this.state.formatsDisplayTableKeys[j] === 'date') {
                                       const date = row[key].split('T')[0].split('-'); // YYYY-MM-DD
                                       return (
@@ -101,7 +101,7 @@ export default class ListarItems extends Component {
                                 </td>
                               </tr>
                             );
-                          }
+                          } return false;
                         }, this)
                       }
                     </tbody>

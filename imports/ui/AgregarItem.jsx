@@ -69,12 +69,12 @@ export default class AgregarItem extends Component {
           <tbody>
             <tr>
               <td> <label htmlFor="nombre">Nombre</label> </td>
-              <td> <input id="nombre" type="text" label="Nombre del elemento a agregar" value={this.state.item.name} onChange={(event) => { this.setItemName(event); }} /> </td>
+              <td> <input id="nombre" type="text" label="Nombre del elemento a agregar" value={this.state.item.name} onChange={event => this.setItemName(event)} /> </td>
             </tr>
             <tr>
               <td> Categoria </td>
               <td>
-                <select className="custab-select" onChange={(event) => { this.setItemCategory(event); }}>
+                <select className="custab-select" onChange={event => this.setItemCategory(event)}>
                   <option defaultValue="selected" value={this.state.item.category} />
                   <option value="Casa">Casa</option>
                   <option value="Carro">Carro</option>
@@ -85,7 +85,7 @@ export default class AgregarItem extends Component {
             <tr>
               <td> Tipo </td>
               <td>
-                <select className="custab-select" onChange={(event) => { this.setItemType(event); }}>
+                <select className="custab-select" onChange={event => this.setItemType(event)}>
                   <option defaultValue="selected" value={this.state.item.type} />
                   <option value="Impuesto">Impuesto</option>
                   <option value="Seguro">Seguro</option>
@@ -96,12 +96,12 @@ export default class AgregarItem extends Component {
             </tr>
             <tr>
               <td> <label htmlFor="pagaren">Pagar en</label> </td>
-              <td> <input id="pagaren" className="custab-date" type="date" value={this.state.item.dueDay} onChange={(event) => { this.setItemDueDay(event); }} /> </td>
+              <td> <input id="pagaren" className="custab-date" type="date" value={this.state.item.dueDay} onChange={event => this.setItemDueDay(event)} /> </td>
             </tr>
             <tr>
               <td> Periodicidad </td>
               <td>
-                <select className="custab-select" onChange={(event) => { this.setItemPeriodicity(event); }}>
+                <select className="custab-select" onChange={event => this.setItemPeriodicity(event)}>
                   <option defaultValue="selected" value={this.state.item.periodicity} />
                   <option value="M">Mensual</option>
                   <option value="B">Bimestral</option>
@@ -113,11 +113,11 @@ export default class AgregarItem extends Component {
             </tr>
             <tr>
               <td> <label htmlFor="valor"> Valor </label> </td>
-              <td> <input id="valor" type="number" value={this.state.item.amount} onChange={(event) => this.setItemAmount(event)} /> </td>
+              <td> <input id="valor" type="number" value={this.state.item.amount} onChange={event => this.setItemAmount(event)} /> </td>
             </tr>
           </tbody>
         </table>
-        <button className="btn btn-success btn-xs pull-right" onClick={(event) => this.addItem(event)}> Agregar </button>
+        <button className="btn btn-success btn-xs pull-right" onClick={event => this.addItem(event)}> Agregar </button>
       </div>
     );
   }
