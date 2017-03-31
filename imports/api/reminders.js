@@ -34,7 +34,7 @@ Meteor.methods({
         return parser.recur().on(details.date).fullDate();
       },
       job: function () {
-        sendMail(details);
+        Meteor.call('sendMail', details);
         FutureTasks.remove(id);
         SyncedCron.remove(id);
         return id;
@@ -52,10 +52,10 @@ Meteor.methods({
     };
 
     if (details.date < new Date()) {
-      sendMail(details);
+      Meteor.call('sendMail', details);
     } else {
       const thisId = FutureTasks.insert(details);
-      addTask(thisId, details);
+      Meteor.call('addTask', thisId, details);
     }
     return true;
   },
