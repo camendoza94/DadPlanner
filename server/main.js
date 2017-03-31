@@ -8,7 +8,9 @@ Meteor.startup(() => {
   WebApp.addHtmlAttributeHook(() => ({ lang: 'es' }));
 
   process.env.MAIL_URL = 'smtp://planeadorparapapasapp@gmail.com:ppp_webdev@smtp.gmail.com:465/';
-  Meteor.call('findTasks').forEach(function (mail) {
+  const tasks = Meteor.call('findTasks');
+
+  tasks.forEach(function (mail) {
     if (mail.date < new Date()) {
       Meteor.call('findTasks', mail);
     } else {

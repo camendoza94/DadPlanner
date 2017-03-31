@@ -14,7 +14,7 @@ if (Meteor.isServer) {
 
 Meteor.methods({
   findTasks() {
-    return FutureTasks.find();
+    return FutureTasks.find().fetch();
   },
   sendMail(details) {
     check(details, Object);
@@ -37,6 +37,7 @@ Meteor.methods({
         Meteor.call('sendMail', details);
         FutureTasks.remove(id);
         SyncedCron.remove(id);
+        // TODO: hacer que la vuelva a agregar con la periodicidad
         return id;
       }
     });
