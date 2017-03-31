@@ -20,32 +20,32 @@ export class App extends Component {
 
         <div className="row">
           <nav className="navbar navbar-default">
-        	   <div className="container-fluid">
-        	     <div className="navbar-header">
-        	      <a className="navbar-brand" href="#">&emsp;&emsp;&emsp;&emsp; Planeador Para Papas</a>
-        	    </div>
+            <div className="container-fluid">
+              <div className="navbar-header">
+                <a className="navbar-brand" href="#">&emsp;&emsp;&emsp;&emsp; Planeador Para Papas</a>
+              </div>
 
-        	    <div className="collapse navbar-collapse">
-        	      <ul className="nav navbar-nav">
-        	        <li className="active"><a href="#">Home <span className="sr-only">(current)</span></a></li>
-        	      </ul>
-        	      <ul className="nav navbar-nav navbar-right">
+              <div className="collapse navbar-collapse">
+                <ul className="nav navbar-nav">
+                  <li className="active"><a href="#">Home <span className="sr-only">(current)</span></a></li>
+                </ul>
+                <ul className="nav navbar-nav navbar-right">
                   {/* Componente: Accounts */}
-        	        <li><AccountsUIWrapper /> &emsp;&emsp;</li>
-        	      </ul>
-        	    </div>
-        	  </div>
-        	</nav>
+                  <li><AccountsUIWrapper /> &emsp;&emsp;</li>
+                </ul>
+              </div>
+            </div>
+          </nav>
         </div>
 
         <div className="row">
-          <div className="col-md-1"></div>
+          <div className="col-md-1" />
 
           <div className="col-md-10">
             <br />
             <div className="row">
               <div className="col-md-2">
-                <img src="/images/ppp.png" alt="Logo de Planeador Para Papas" width="100%" height="100%"></img>
+                <img src="/images/ppp.png" alt="Logo de Planeador Para Papas" width="100%" height="100%" />
               </div>
               <div className="col-md-10">
                 <h3>
@@ -61,25 +61,31 @@ export class App extends Component {
               </div>
             </div>
 
-            <br/>
+            <br />
 
             <div className="row">
 
               {/* Componente: Listar Items */}
               <div className="col-md-7 col-xs-12">
-                <ListarItems items={this.props.items.filter(item => item.creator === this.props.currentUser._id)} ref={(input) => { this.listarItemsChild = input; }} user={this.props.currentUser && this.props.currentUser._id} />
+                <ListarItems
+                  items={this.props.items.filter(item =>
+                    item.creator === this.props.currentUser._id)}
+                  ref={input => (this.listarItemsChild = input)}
+                />
               </div>
 
               {/* Componente: Agregar Item */}
               <div className="col-md-5 col-xs-12 custyle">
-                <AgregarItem user={this.props.currentUser && this.props.currentUser._id} updateItemsList={this.updateItemsList.bind(this)} />
+                <AgregarItem
+                  updateItemsList={() => this.updateItemsList()}
+                />
               </div>
 
             </div>
 
           </div>
 
-          <div className="col-md-1"></div>
+          <div className="col-md-1" />
         </div>
 
       </div>
@@ -89,12 +95,29 @@ export class App extends Component {
 
 
 App.propTypes = {
-  items: PropTypes.array.isRequired,
-  currentUser: PropTypes.object,
+  items: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    dueDay: PropTypes.string,
+    category: PropTypes.string,
+    type: PropTypes.string,
+    periodicity: PropTypes.string,
+    amount: PropTypes.string,
+    completed: PropTypes.bol,
+    creator: PropTypes.string,
+    username: PropTypes.string,
+  })).isRequired,
+  currentUser: PropTypes.shape({
+    _id: PropTypes.string,
+    createdAt: PropTypes.string,
+    username: PropTypes.string,
+  }),
 };
 
+App.defaultProps = {
+  currentUser: {},
+};
 
-export default AppContainer = createContainer(() => {
+export default createContainer(() => {
   Meteor.subscribe('items');
   return {
     items: Items.find({}).fetch(),

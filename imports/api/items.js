@@ -11,7 +11,7 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'items.insert'(item) {
+  itemInsert(item) {
     check(item, Object);
     check(item.name, String);
     check(item.dueDay, String);
@@ -37,7 +37,7 @@ Meteor.methods({
       username: Meteor.users.findOne(this.userId).username,
     });
   },
-  'items.remove'(itemId) {
+  itemRemove(itemId) {
     check(itemId, String);
 
     const item = Items.findOne(itemId);
@@ -47,7 +47,7 @@ Meteor.methods({
 
     Items.remove(itemId);
   },
-  'items.setCompleted'(itemId, setCompleted) {
+  setCompletedItem(itemId, setCompleted) {
     check(itemId, String);
     check(setCompleted, Boolean);
 
