@@ -39,17 +39,19 @@ Meteor.methods({
         SyncedCron.remove(id);
         // TODO: hacer que la vuelva a agregar con la periodicidad
         return id;
-      }
+      },
     });
   },
   scheduleMail(name, dueDay) {
+    check(name, String);
+    check(dueDay, String);
     const msg = 'Este es un correo de Planeador de Papas recordandote que tienes que pagar: ' + name + ' el proximo ' + dueDay + '.';
     const details = {
       from: 'planeadorpapapapasapp@gmail.com',
       to: Meteor.users.findOne(this.userId).username,
       subject: 'Recordatorio de Pago - PPP',
       text: msg,
-      date: this.state.item.dueDay,
+      date: dueDay,
     };
 
     if (details.date < new Date()) {
