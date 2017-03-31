@@ -6,11 +6,11 @@ import '../imports/api/items.js';
 Meteor.startup(() => {
   // code to run on server at startup
   WebApp.addHtmlAttributeHook(() => ({ lang: 'es' }));
-
+  // TODO Poner esto como una variable de entorno
   process.env.MAIL_URL = 'smtp://planeadorparapapasapp@gmail.com:ppp_webdev@smtp.gmail.com:465/';
   const tasks = Meteor.call('findTasks');
 
-  tasks.forEach(function (mail) {
+  tasks.forEach((mail) => {
     if (mail.date < new Date()) {
       Meteor.call('findTasks', mail);
     } else {

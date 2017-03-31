@@ -30,10 +30,8 @@ Meteor.methods({
     check(details, Object);
     SyncedCron.add({
       name: id,
-      schedule: function (parser) {
-        return parser.recur().on(details.date).fullDate();
-      },
-      job: function () {
+      schedule: parser => parser.recur().on(details.date).fullDate(),
+      job: () => {
         Meteor.call('sendMail', details);
         FutureTasks.remove(id);
         SyncedCron.remove(id);
@@ -45,7 +43,7 @@ Meteor.methods({
   scheduleMail(name, dueDay) {
     check(name, String);
     check(dueDay, String);
-    const msg = 'Este es un correo de Planeador de Papas recordandote que tienes que pagar: ' + name + ' el proximo ' + dueDay + '.';
+    const msg = `Este es un correo de Planeador de Papas recordandote que tienes que pagar: ${name} el proximo ${dueDay}.`;
     const details = {
       from: 'planeadorpapapapasapp@gmail.com',
       to: Meteor.users.findOne(this.userId).username,
