@@ -95,7 +95,7 @@ export default class ListarItems extends Component {
                                   }, this)
                                 }
                                 <td className="text-center">
-                                  <button className="btn btn-info btn-xs" onClick={() => ListarItems.openEditModal()}> Detalles </button>
+                                  <button className="btn btn-primary btn-xs" onClick={() => ListarItems.openEditModal()}> Detalles </button>
                                   &emsp;
                                   <button className="btn btn-danger btn-xs" onClick={() => this.deleteItem(row._id)}> Eliminar </button>
                                 </td>

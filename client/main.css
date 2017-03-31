@@ -29,10 +29,11 @@ h2 {
   font-weight: bold;
 }
 .yellow-heading {
-  color: #FFAD1C;
+  color: #A80033;
 }
 .btn {
-  font-size: 16px;
+  font-weight: bold;
+  font-size: 18px;
 }
 .navbar {
   font-size: 20px;
@@ -68,7 +69,7 @@ h2 {
 
 .login-button
 {
-  background: #18CC68 !important;
+  background: #008149 !important;
   font-family: 'Gudea', sans-serif !important;
   text-transform: uppercase;
   font-weight: bold;
