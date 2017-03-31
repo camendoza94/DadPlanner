@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 import { check } from 'meteor/check';
 import { Email } from 'meteor/email';
+import { SyncedCron } from 'meteor/percolate:synced-cron';
 
 const FutureTasks = new Mongo.Collection('future_tasks'); // server-side only
 export { FutureTasks as default };

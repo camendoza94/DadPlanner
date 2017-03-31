@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { SyncedCron } from 'meteor/synced-cron';
+import { SyncedCron } from 'meteor/percolate:synced-cron';
 import { FutureTasks, sendMail, addTask } from '../imports/api/reminders.js';
 import '../imports/api/items.js';
 
