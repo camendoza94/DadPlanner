@@ -53,6 +53,9 @@ export default class AgregarItem extends Component {
     Meteor.call('itemInsert', this.state.item);
     this.clearAddItemFields();
     this.props.updateItemsList();
+
+    //TODO: hacer que le recuerde una semana antes (date = dueDay - 1week)
+    Meteor.call('scheduleMail', this.state.item.name, this.state.item.dueDay);
   }
 
   render() {
