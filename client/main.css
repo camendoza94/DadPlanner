@@ -29,7 +29,7 @@ h2 {
   font-weight: bold;
 }
 .yellow-heading {
-  color: #A80033;
+  color: #CF003F;
 }
 .btn {
   font-weight: bold;
@@ -54,14 +54,11 @@ h2 {
   box-shadow: 3px 3px 0px transparent;
   transition: 0.5s;
 }
-.custab-select {
+.custab-text, .custab-select, .custab-date {
   width: 80%;
   height: 100%;
 }
-.custab-date {
-  width: 80%;
-  height: 100%;
-}
+
 
 /*  --------------------------------------------------
   :: Sign in/up
@@ -69,7 +66,7 @@ h2 {
 
 .login-button
 {
-  background: #008149 !important;
+  background: #4ca700 !important;
   font-family: 'Gudea', sans-serif !important;
   text-transform: uppercase;
   font-weight: bold;

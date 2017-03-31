@@ -3176,8 +3176,8 @@ fieldset[disabled] .btn-primary.focus {
 }
 .btn-success {
   color: #ffffff;
-  background-color: #008149;
-  border-color: #006137;
+  background-color: #4ca700;
+  border-color: #397e00;
 }
 .btn-success:focus,
 .btn-success.focus {
@@ -3224,8 +3224,8 @@ fieldset[disabled] .btn-success:focus,
 .btn-success.disabled.focus,
 .btn-success[disabled].focus,
 fieldset[disabled] .btn-success.focus {
-  background-color: #008149;
-  border-color: #006137;
+  background-color: #4ca700;
+  border-color: #397e00;
 }
 .btn-success .badge {
   color: #28b62c;
@@ -5344,7 +5344,7 @@ button.list-group-item-success:hover,
 a.list-group-item-success:focus,
 button.list-group-item-success:focus {
   color: #ffffff;
-  background-color: #006137;
+  background-color: #397e00;
 }
 a.list-group-item-success.active,
 button.list-group-item-success.active,
@@ -6804,8 +6804,8 @@ button.close {
 .btn-success:hover,
 .btn-success:focus,
 .btn-group.open .dropdown-toggle.btn-success {
-  background-color: #008149;
-  border-color: #006137;
+  background-color: #4ca700;
+  border-color: #397e00;
 }
 .btn-info:hover,
 .btn-info:focus,
@@ -7138,7 +7138,7 @@ a.list-group-item-success.active {
 }
 a.list-group-item-success.active:hover,
 a.list-group-item-success.active:focus {
-  background-color: #006137;
+  background-color: #397e00;
 }
 a.list-group-item-warning.active {
   background-color: #ff851b;

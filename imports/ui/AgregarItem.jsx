@@ -69,7 +69,7 @@ export default class AgregarItem extends Component {
           <tbody>
             <tr>
               <td> <label htmlFor="nombre">Nombre</label> </td>
-              <td> <input id="nombre" type="text" label="Nombre del elemento a agregar" value={this.state.item.name} onChange={event => this.setItemName(event)} /> </td>
+              <td> <input className="custab-text" id="nombre" type="text" label="Nombre del elemento a agregar" value={this.state.item.name} onChange={event => this.setItemName(event)} /> </td>
             </tr>
             <tr>
               <td> Categoria </td>
@@ -113,7 +113,7 @@ export default class AgregarItem extends Component {
             </tr>
             <tr>
               <td> <label htmlFor="valor"> Valor </label> </td>
-              <td> <input id="valor" type="number" value={this.state.item.amount} onChange={event => this.setItemAmount(event)} /> </td>
+              <td> <input className="custab-text" id="valor" type="number" value={this.state.item.amount} onChange={event => this.setItemAmount(event)} /> </td>
             </tr>
           </tbody>
         </table>
