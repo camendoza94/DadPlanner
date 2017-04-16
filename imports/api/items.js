@@ -22,6 +22,7 @@ Meteor.methods({
 
     // Make sure the user is logged in before inserting an item
     if (!this.userId) {
+      // TODO: not show an error but a modal
       throw new Meteor.Error('not-authorized');
     }
 

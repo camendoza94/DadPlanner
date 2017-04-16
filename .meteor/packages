@@ -23,3 +23,5 @@ accounts-ui
 accounts-password
 twbs:bootstrap
 peppelg:bootstrap-3-modal
+email
+percolate:synced-cron
