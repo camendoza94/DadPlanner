@@ -25,3 +25,6 @@ twbs:bootstrap
 peppelg:bootstrap-3-modal
 email
 percolate:synced-cron
+practicalmeteor:mocha
+xolvio:cleaner
+dburles:factory

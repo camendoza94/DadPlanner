@@ -30,7 +30,8 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-meteor": "^4.0.1",
-    "eslint-plugin-react": "^6.10.3"
+    "eslint-plugin-react": "^6.10.3",
+    "faker": "^4.1.0"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
@@ -49,8 +50,14 @@
     },
     "rules": {
       "import/no-extraneous-dependencies": "off",
-      "import/extensions":  ["off", "never"],
-      "linebreak-style": ["error", "unix"],
+      "import/extensions": [
+        "off",
+        "never"
+      ],
+      "linebreak-style": [
+        "error",
+        "unix"
+      ],
       "no-underscore-dangle": "off"
     },
     "env": {

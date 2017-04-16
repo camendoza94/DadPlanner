@@ -48,7 +48,7 @@ Meteor.methods({
 
     Items.remove(itemId);
   },
-  setCompletedItem(itemId, setCompleted) {
+  itemSetCompleted(itemId, setCompleted) {
     check(itemId, String);
     check(setCompleted, Boolean);
 
