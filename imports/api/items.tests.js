@@ -9,9 +9,6 @@ import faker from 'faker';
 
 import Items from './items.js';
 
-const otherUserId = Random.id();
-let userId;
-
 Factory.define('user', Meteor.users, {
   createdAt: () => new Date(),
   username: () => faker.internet.userName(),
@@ -30,6 +27,9 @@ Factory.define('item', Items, {
 if (Meteor.isServer) {
   describe('Items', () => {
     describe('methods', () => {
+      const otherUserId = Random.id();
+      let userId;
+
       beforeEach(() => {
         resetDatabase();
         userId = Factory.create('user')._id;

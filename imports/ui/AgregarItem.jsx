@@ -115,7 +115,7 @@ export default class AgregarItem extends Component {
               </td>
             </tr>
             <tr>
-              <td> <label htmlFor="valor"> Valor </label> </td>
+              <td> <label htmlFor="valor">Valor</label> </td>
               <td> <input className="custab-text" id="valor" type="number" value={this.state.item.amount} onChange={event => this.setItemAmount(event)} /> </td>
             </tr>
           </tbody>
