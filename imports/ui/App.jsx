@@ -117,7 +117,7 @@ App.defaultProps = {
 export default createContainer(() => {
   Meteor.subscribe('items');
   return {
-    items: Items.find({}).fetch(),
+    items: Items.find().fetch(),
     currentUser: Meteor.user(),
   };
 }, App);

@@ -7,7 +7,9 @@ export { Items as default };
 
 if (Meteor.isServer) {
   // This code only runs on the server
-  Meteor.publish('items', () => Items.find({}));
+  Meteor.publish('items', function itemsPublication() {
+    return Items.find({ creator: this.userId });
+  });
 }
 
 Meteor.methods({
