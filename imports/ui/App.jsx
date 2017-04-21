@@ -17,7 +17,6 @@ export class App extends Component {
   render() {
     return (
       <div>
-
         <div className="row">
           <nav className="navbar navbar-default">
             <div className="container-fluid">
@@ -62,32 +61,30 @@ export class App extends Component {
             </div>
 
             <br />
+            { this.props.currentUser ?
+              <div className="row">
 
-            <div className="row">
+                {/* Componente: Listar Items */}
+                <div className="col-md-7 col-xs-12">
+                  <ListarItems
+                    items={this.props.items.filter(item =>
+                      item.creator === this.props.currentUser._id)}
+                    ref={input => (this.listarItemsChild = input)}
+                  />
+                </div>
 
-              {/* Componente: Listar Items */}
-              <div className="col-md-7 col-xs-12">
-                <ListarItems
-                  items={this.props.items.filter(item =>
-                    item.creator === this.props.currentUser._id)}
-                  ref={input => (this.listarItemsChild = input)}
-                />
-              </div>
+                {/* Componente: Agregar Item */}
+                <div className="col-md-5 col-xs-12 custyle">
+                  <AgregarItem
+                    updateItemsList={() => this.updateItemsList()}
+                  />
+                </div>
 
-              {/* Componente: Agregar Item */}
-              <div className="col-md-5 col-xs-12 custyle">
-                <AgregarItem
-                  updateItemsList={() => this.updateItemsList()}
-                />
-              </div>
-
-            </div>
-
+              </div> : ''
+            }
           </div>
-
           <div className="col-md-1" />
         </div>
-
       </div>
     );
   }
