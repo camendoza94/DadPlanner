@@ -11,7 +11,7 @@ import Items from './items.js';
 
 Factory.define('user', Meteor.users, {
   createdAt: () => new Date(),
-  username: () => faker.internet.userName(),
+  username: () => faker.internet.email(),
 });
 
 Factory.define('item', Items, {
